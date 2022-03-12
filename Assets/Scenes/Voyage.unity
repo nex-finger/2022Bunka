@@ -395,7 +395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ratio: 1.05
-  Limit: 4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1162,8 +1161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b38daf78577ce47bcfb4626ea9e5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lengthx: 0
-  Lengthy: 0
+  Lengthx: 25
+  Lengthy: 14
 --- !u!1 &1437048473
 GameObject:
   m_ObjectHideFlags: 0

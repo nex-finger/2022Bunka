@@ -2,8 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+
 public class Lander : MonoBehaviour
 {
+    public float LandingPower;
+    public float RandomRange;
+    private Rigidbody2D _rigidbody2D;
+    private Vector3 _reset;
+    [SerializeField] private Vector3 _acceleration;
+
+    private void Awake()
+    {
+        _rigidbody2D = this.GetComponent<Rigidbody2D>();
+
+        float StartRandom;
+
+        float StartAngle = Random.Range(0, 360);
+        GameObject.Find("Rocket").transform.localEulerAngles = Rocket_Angle;
+
+        StartRandom = Random.Range(-RandomRange, RandomRange);
+
+        Vector3 StartForce = new Vector3(StartRandom, 0.0f, 0.0f);  // 力を設定
+        _rigidbody2D.AddForce(StartForce, ForceMode2D.Impulse);
+    }
+
     // 入力による制御
     float RCS_Power;
     float Boost_Power;
@@ -30,14 +53,9 @@ public class Lander : MonoBehaviour
             float Angle = Rocket_Angle.z * Mathf.Deg2Rad;
             // ラジアンから進行方向を設定
             Vector3 Boost_acc = new Vector3(Mathf.Cos(Angle), Mathf.Sin(Angle), 0);
-            Boost_acc.x = Boost_acc.x * Boost_Power;
-            Boost_acc.y = Boost_acc.y * Boost_Power;
 
-            R_acc_x += Boost_acc.x;
-            R_acc_y += Boost_acc.y;
-
-            Boost_acc.x = 0;
-            Boost_acc.y = 0;
+            _acceleration = new Vector3(Boost_acc.x, Boost_acc.y, 0);    // 力を設定
+            _rigidbody2D.AddForce(_acceleration, ForceMode2D.Force);
         }
     }
 
@@ -82,21 +100,17 @@ public class Lander : MonoBehaviour
         GameObject.Find("Rocket").transform.localEulerAngles = Rocket_Angle;
     }
 
-    void Accel_cal()
-    {
-        // 考慮します＾＾
-        Rocket_x += R_acc_x * Time.deltaTime;
-        Rocket_y += R_acc_y * Time.deltaTime;
-
-        // 反映させる
-        transform.position = new Vector3(Rocket_x, Rocket_y, 0);
-    }
-
     void Reset()
     {
         // 加速度の初期化
         R_acc_x = 0.0f;
         R_acc_y = 0.0f;
+    }
+
+    void LayrUpdate()
+    {
+        _reset = new Vector3(0, 0, 0);
+        _rigidbody2D.AddForce(_reset, ForceMode2D.Force);
     }
 
     // Start is called before the first frame update
@@ -108,9 +122,9 @@ public class Lander : MonoBehaviour
         //Boost_Power = Input_Value.Boost_Power;
         //RCS_Power = Input_Value.RCS_Power;
 
-        GameObject hoge = GameObject.FindGameObjectWithTag("hujisawa");
+        //GameObject hoge = GameObject.FindGameObjectWithTag("hujisawa");
 
-        Boost_Power = hoge.GetComponent<tmp_1>().Boost_Power;
+        //Boost_Power = hoge.GetComponent<tmp_1>().Boost_Power;
 
         // Debug.Log(Boost_Power);
         // Debug.Log(RCS_Power);
@@ -125,11 +139,7 @@ public class Lander : MonoBehaviour
         // ロケットの回転とSAS
         Rocket_Rotate();
 
-        // 最終的にロケットに与えられる可読度の合計とフレーム遷移による時間の移行
-        Accel_cal();
-
         // 初期化
         Reset();
-
     }
 }
