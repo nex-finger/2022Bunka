@@ -62,6 +62,7 @@ public class LevelStorage : MonoBehaviour
         if (BoostLevel < BoostLimit)
         {
             BoostLevel++;
+            TotalCash += CostBoost[BoostLevel - 2];
         }
     }
 
@@ -71,6 +72,7 @@ public class LevelStorage : MonoBehaviour
         if (BoostLevel != 1)
         {
             BoostLevel--;
+            TotalCash -= CostBoost[BoostLevel - 1];
         }
     }
 
@@ -80,7 +82,7 @@ public class LevelStorage : MonoBehaviour
         if (FuelLevel < FuelLimit)
         {
             FuelLevel++;
-
+            TotalCash += CostFuel[FuelLevel - 2];
         }
     }
 
@@ -90,6 +92,7 @@ public class LevelStorage : MonoBehaviour
         if (FuelLevel != 1)
         {
             FuelLevel--;
+            TotalCash -= CostFuel[FuelLevel - 1];
         }
     }
 
@@ -99,6 +102,7 @@ public class LevelStorage : MonoBehaviour
         if (AntennaLevel < AntennaLimit)
         {
             AntennaLevel++;
+            TotalCash += CostAntenna[AntennaLevel - 2];
         }
     }
 
@@ -108,6 +112,7 @@ public class LevelStorage : MonoBehaviour
         if (AntennaLevel != 1)
         {
             AntennaLevel--;
+            TotalCash -= CostAntenna[AntennaLevel - 1];
         }
     }
 
@@ -117,6 +122,7 @@ public class LevelStorage : MonoBehaviour
         if (LanderLevel < LanderLimit)
         {
             LanderLevel++;
+            TotalCash += CostLander[LanderLevel - 2];
         }
     }
 
@@ -126,6 +132,7 @@ public class LevelStorage : MonoBehaviour
         if (LanderLevel != 1)
         {
             LanderLevel--;
+            TotalCash -= CostLander[LanderLevel - 1];
         }
     }
 }
