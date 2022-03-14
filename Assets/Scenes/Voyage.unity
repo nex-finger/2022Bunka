@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 717201303}
   - component: {fileID: 717201302}
   - component: {fileID: 717201301}
+  - component: {fileID: 717201304}
   m_Layer: 0
   m_Name: Moon_tmp
   m_TagString: Untagged
@@ -572,12 +573,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717201300}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ae029769483c7d4aaf9f4fad8876198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ini_Speed: 1.01
+  ini_Speed: 0.5
   ini_Angle: 0
   Gravity: 0.005
 --- !u!212 &717201302
@@ -638,12 +639,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717201300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &717201304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717201300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b840ddc96041f1441a716b5732309b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &993028542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1072,7 @@ MonoBehaviour:
   Gravity: 0.001
   M_ini_Speed: 0
   M_ini_Angle: 0
+  BoostRange: 0.001
 --- !u!1 &1420858789
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -59,6 +60,8 @@ public class Rocket : MonoBehaviour
     float R_acc_x, R_acc_y;
     Vector3 Rocket_Angle;
     float Rotate_acc;
+
+    public float BoostRange;
 
 
 
@@ -120,6 +123,36 @@ public class Rocket : MonoBehaviour
         Rotate_acc = 0;
 }
 
+    void RocketComponent()
+    {
+        int BoostLevel = 1;
+
+        BoostLevel = LevelStorage.GetBoost();
+
+        if (BoostLevel == 1)
+        {
+            Boost_Power = BoostRange * 1.05f;
+        }
+        else if(BoostLevel == 2)
+        {
+            Boost_Power = BoostRange * 1.20f;
+        }
+        else if (BoostLevel == 3)
+        {
+            Boost_Power = BoostRange * 1.50f;
+        }
+        else if (BoostLevel == 4)
+        {
+            Boost_Power = BoostRange * 2.00f;
+        }
+        else if (BoostLevel == 5)
+        {
+            Boost_Power = BoostRange * 5.00f;
+        }
+
+        //Debug.Log(Boost_Power);
+    }
+
     void Earth_setup()
     {
         // 月に持たせる初速度
@@ -180,32 +213,6 @@ public class Rocket : MonoBehaviour
 
             Boost_acc.x = 0;
             Boost_acc.y = 0;
-        }
-    }
-
-    void Rocket_RCS()
-    {
-        // WASDで加速度を少しだけ変える事ができる
-        // 左キーを押し続けていたら
-        if (Input.GetKey("left") || Input.GetKey("a"))
-        {
-            // 代入したPositionに対して加算減算を行う
-            R_acc_x = -RCS_Power;
-        }
-        else if (Input.GetKey("right") || Input.GetKey("d"))
-        { // 右キーを押し続けていたら
-          // 代入したPositionに対して加算減算を行う
-            R_acc_x = RCS_Power;
-        }
-        else if (Input.GetKey("up") || Input.GetKey("w"))
-        { // 上キーを押し続けていたら
-          // 代入したPositionに対して加算減算を行う
-            R_acc_y = RCS_Power;
-        }
-        else if (Input.GetKey("down") || Input.GetKey("s"))
-        { // 下キーを押し続けていたら
-          // 代入したPositionに対して加算減算を行う
-            R_acc_y = -RCS_Power;
         }
     }
 
@@ -354,6 +361,24 @@ public class Rocket : MonoBehaviour
         M_place_2_y = E_place_3_y;
     }
 
+    void SceneChange()
+    {
+        if(M_vec_RE < 0.5f)
+        {
+            SceneManager.LoadScene("Landing");
+        }
+
+        if(E_vec_RE > 50.0f)
+        {
+            SceneManager.LoadScene("GameOver1");
+        }
+
+        if (E_vec_RE < 0.5f)
+        {
+            SceneManager.LoadScene("GameOver2");
+        }
+    }
+
     void Reset()
     {
         // 加速度の初期化
@@ -367,19 +392,9 @@ public class Rocket : MonoBehaviour
         // 変数のリセット
         Reset_Value_Rocket();
 
-        //Boost_Power = Input_Value.Boost_Power;
-        //RCS_Power = Input_Value.RCS_Power;
-
-        //GameObject hoge = GameObject.FindGameObjectWithTag("hujisawa");
-
-        //Boost_Power = hoge.GetComponent<tmp_1>().Boost_Power;
-        //RCS_Power = hoge.GetComponent<tmp_1>().RCS_Power;
-
-        // Debug.Log(Boost_Power);
-        // Debug.Log(RCS_Power);
-
-        Boost_Power = Input_Value.GetBoost();
-        RCS_Power = 0;
+        // Boost_Power = Input_Value.GetBoost();
+        // ロケットの性能の更新
+        RocketComponent();
 
         // 地球に関する初期設定
         Earth_setup();
@@ -400,9 +415,6 @@ public class Rocket : MonoBehaviour
         // ブースターによる制御
         Rocket_Boost();
 
-        // RCSによる制御
-        Rocket_RCS();
-
         // ロケットの回転とSAS
         Rocket_Rotate();
 
@@ -414,6 +426,9 @@ public class Rocket : MonoBehaviour
 
         // 最終的にロケットに与えられる可読度の合計とフレーム遷移による時間の移行
         Accel_cal();
+
+        // シーン変移について
+        SceneChange();
 
         // 初期化
         Reset();

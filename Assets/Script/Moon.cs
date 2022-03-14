@@ -55,8 +55,6 @@ public class Moon : MonoBehaviour
         Angle = 0;
         Distance_2 = 0;
 
-        ini_Speed = Input_Value.GetMoon();
-
         // 月に持たせる初速度
         // 角度をラジアンに変換
         float ini_rad = ini_Angle * Mathf.Deg2Rad;
