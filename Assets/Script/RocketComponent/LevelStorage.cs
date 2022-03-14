@@ -3,40 +3,129 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameDirector : MonoBehaviour
+public class LevelStorage : MonoBehaviour
 {
     public Text label;
-    public int count;
+
+    public static int BoostLevel;
+    public static int FuelLevel;
+    public static int AntennaLevel;
+    public static int LanderLevel;
+
+    public static int GetBoost()
+    {
+        return BoostLevel;
+    }
+    public static int GetFuel()
+    {
+        return FuelLevel;
+    }
+    public static int GetAntenna()
+    {
+        return AntennaLevel;
+    }
+    public static int GetLander()
+    {
+        return LanderLevel;
+    }
+
+    public int BoostLimit;
+    public int FuelLimit;
+    public int AntennaLimit;
+    public int LanderLimit;
+
+    private int[] CostBoost = new int[] {200, 300, 500, 500};
+    private int[] CostFuel = new int[] {100, 250, 400, 400};
+    private int[] CostAntenna = new int[] {150, 400, 200, 400};
+    private int[] CostLander = new int[] {250, 100, 100, 100};
+
+    public static int TotalCash;
+    public static int GetCash()
+    {
+        return TotalCash;
+    }
 
     void Start()
     {
-        count = 2;
-        UpdateLabel();
+        BoostLevel = 1;
+        FuelLevel = 1;
+        AntennaLevel = 1;
+        LanderLevel = 1;
+
+        TotalCash = 0;
     }
 
     // 数値を増やすボタンのOn Click()に指定
-    public void Click1()
+    public void BoostUp()
     {
         // UpdateLabel()内で分岐をすると、表示とcountの値がずれてしまうので、移行して条件も少し変更
-        if (count < 30)
+        if (BoostLevel < BoostLimit)
         {
-            count++;
+            BoostLevel++;
         }
-        UpdateLabel();
     }
 
     // 数値を減らすボタンのOn Click()に指定
-    public void Click2()
+    public void BoostDown()
     {
-        if (count > 2)
+        if (BoostLevel != 1)
         {
-            count--;
+            BoostLevel--;
         }
-        UpdateLabel();
     }
 
-    void UpdateLabel()
+    public void FuelUp()
     {
-        label.text = count + "人";
+        // UpdateLabel()内で分岐をすると、表示とcountの値がずれてしまうので、移行して条件も少し変更
+        if (FuelLevel < FuelLimit)
+        {
+            FuelLevel++;
+
+        }
+    }
+
+    // 数値を減らすボタンのOn Click()に指定
+    public void FuelDown()
+    {
+        if (FuelLevel != 1)
+        {
+            FuelLevel--;
+        }
+    }
+
+    public void AntennaUp()
+    {
+        // UpdateLabel()内で分岐をすると、表示とcountの値がずれてしまうので、移行して条件も少し変更
+        if (AntennaLevel < AntennaLimit)
+        {
+            AntennaLevel++;
+        }
+    }
+
+    // 数値を減らすボタンのOn Click()に指定
+    public void AntennaDown()
+    {
+        if (AntennaLevel != 1)
+        {
+            AntennaLevel--;
+        }
+    }
+
+    public void LanderUp()
+    {
+        // UpdateLabel()内で分岐をすると、表示とcountの値がずれてしまうので、移行して条件も少し変更
+        if (LanderLevel < LanderLimit)
+        {
+            LanderLevel++;
+        }
+    }
+
+    // 数値を減らすボタンのOn Click()に指定
+    public void LanderDown()
+    {
+        if (LanderLevel != 1)
+        {
+            LanderLevel--;
+        }
     }
 }
