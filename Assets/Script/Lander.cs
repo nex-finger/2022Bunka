@@ -98,7 +98,6 @@ public class Lander : MonoBehaviour
         GameObject.Find("Rocket").transform.localEulerAngles = Rocket_Angle;
     }
 
-
     void LayrUpdate()
     {
         _reset = new Vector3(0, 0, 0);
