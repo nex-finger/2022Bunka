@@ -45,6 +45,6 @@ public class Zoom : MonoBehaviour
             }
         }
 
-        Debug.Log(cam.orthographicSize);
+        //Debug.Log(cam.orthographicSize);
     }
 }

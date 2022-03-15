@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameTitle.unity
     guid: eb55d394d8a1194459ee53335b7fcc7b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ArcadeSelectDifficulty.unity
     guid: 2e01f110dc293dc4599328534d1873c2
   - enabled: 1
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Voyage.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Title.unity
     guid: 4cf40cbf8f28b67409da0fa4b26ac242
   - enabled: 1
