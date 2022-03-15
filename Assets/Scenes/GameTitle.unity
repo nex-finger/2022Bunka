@@ -584,7 +584,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 952710643}
-        m_MethodName: OnClickStartButton
+        m_MethodName: SCHowtoPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 952710638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06ca7ed7e32107409c79d995fe0567d, type: 3}
+  m_Script: {fileID: 11500000, guid: ebb2b406d90f4fe4ea85589b27213512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1173837371
