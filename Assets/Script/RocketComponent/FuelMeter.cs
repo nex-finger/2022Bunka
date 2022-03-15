@@ -30,6 +30,7 @@ public class FuelMeter : MonoBehaviour
 
         if (Input.GetMouseButton(2))
         {
+            Debug.Log("Pushing");
             Fuel -= Time.deltaTime;
             if (Fuel < 0.0f)
             {
