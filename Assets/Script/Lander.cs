@@ -37,8 +37,6 @@ public class Lander : MonoBehaviour
 
     void Reset_Value_Rocket()
     {
-        R_acc_x = 0;
-        R_acc_y = 0;
         Rocket_Angle = new Vector3(0, 0, 0);
         Rotate_acc = 0;
     }
@@ -100,13 +98,6 @@ public class Lander : MonoBehaviour
         GameObject.Find("Rocket").transform.localEulerAngles = Rocket_Angle;
     }
 
-    void Reset()
-    {
-        // 加速度の初期化
-        R_acc_x = 0.0f;
-        R_acc_y = 0.0f;
-    }
-
     void LayrUpdate()
     {
         _reset = new Vector3(0, 0, 0);
@@ -138,8 +129,5 @@ public class Lander : MonoBehaviour
 
         // ロケットの回転とSAS
         Rocket_Rotate();
-
-        // 初期化
-        Reset();
     }
 }
