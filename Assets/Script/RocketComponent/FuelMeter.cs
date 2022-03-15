@@ -5,7 +5,7 @@ using UnityEngine;
 public class FuelMeter : MonoBehaviour
 {
     private float Fuel_Max;
-    private float Fuel;
+    public static float Fuel;
     public float FuelRange;
 
     // Start is called before the first frame update
@@ -30,6 +30,7 @@ public class FuelMeter : MonoBehaviour
 
         if (Input.GetMouseButton(2))
         {
+            Debug.Log("Pushing");
             Fuel -= Time.deltaTime;
             if (Fuel < 0.0f)
             {
@@ -40,7 +41,7 @@ public class FuelMeter : MonoBehaviour
         RotateRate = 240.0f / Fuel_Max;
         NeedleRotate = (RotateRate * Fuel) - 120.0f;
 
-        Debug.Log(NeedleRotate);
+        Debug.Log(Fuel);
         //GetComponent<Needle>().RectTransform.Rotate = new Vector3(0, 0, NeedleRotate);
     }
 }

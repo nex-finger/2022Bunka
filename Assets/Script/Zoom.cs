@@ -35,6 +35,10 @@ public class Zoom : MonoBehaviour
         else if (MouseWheel < 0)
         {
             cam.orthographicSize = cam.orthographicSize * (1 / Ratio); //ズームイン。
+            if (cam.orthographicSize < 1.0f)
+            {
+                cam.orthographicSize = 1.0f;
+            }
         }
     }
 }

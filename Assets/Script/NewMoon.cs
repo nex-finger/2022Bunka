@@ -27,6 +27,6 @@ public class NewMoon : MonoBehaviour
 
         GameObject.Find("Moon_tmp").transform.position = new Vector3(MoonPosition.x, MoonPosition.y, 0);
 
-        Debug.Log(MoonPosition.x);
+        //Debug.Log(MoonPosition.x);
     }
 }
