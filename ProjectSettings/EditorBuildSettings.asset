@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver2.unity
     guid: 96f1d7e6eb6279a44bfb0b0e763fa82a
   - enabled: 1
+    path: Assets/Scenes/ArcadeStart.unity
+    guid: 1502accad52db364d91538eed0536ee0
+  - enabled: 1
     path: Assets/Scenes/Landing.unity
     guid: a4bf66b407e633f48a5e7c15ea22861a
+  - enabled: 1
+    path: Assets/Scenes/Gallery.unity
+    guid: 5e6cc53df26529a45a0352d57c66d746
   m_configObjects: {}
