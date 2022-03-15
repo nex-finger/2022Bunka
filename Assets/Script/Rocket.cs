@@ -126,29 +126,10 @@ public class Rocket : MonoBehaviour
     void RocketComponent()
     {
         int BoostLevel = 1;
+        float[] BoostRatio = new float[] {1.05f, 1.20f, 1.50f, 2.00f, 5.00f};
 
         BoostLevel = LevelStorage.GetBoost();
-
-        if (BoostLevel == 1)
-        {
-            Boost_Power = BoostRange * 1.05f;
-        }
-        else if(BoostLevel == 2)
-        {
-            Boost_Power = BoostRange * 1.20f;
-        }
-        else if (BoostLevel == 3)
-        {
-            Boost_Power = BoostRange * 1.50f;
-        }
-        else if (BoostLevel == 4)
-        {
-            Boost_Power = BoostRange * 2.00f;
-        }
-        else if (BoostLevel == 5)
-        {
-            Boost_Power = BoostRange * 5.00f;
-        }
+        Boost_Power = BoostRange * BoostRatio[BoostLevel - 1];
 
         //Debug.Log(Boost_Power);
     }

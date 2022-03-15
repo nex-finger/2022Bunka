@@ -6,6 +6,7 @@ public class FuelMeter : MonoBehaviour
 {
     private float Fuel_Max;
     private float Fuel;
+    public float FuelRange;
 
     // Start is called before the first frame update
     void Start()
@@ -13,32 +14,10 @@ public class FuelMeter : MonoBehaviour
         int FuelLevel = 1;
 
         FuelLevel = LevelStorage.GetFuel();
+        float[] FuelRatio = new float[] {30.0f, 40.0f, 60.0f, 120.0f, 500.0f};
 
-        if (FuelLevel == 1)
-        {
-            Fuel_Max = 30.0f;
-            Fuel = Fuel_Max;
-        }
-        else if (FuelLevel == 2)
-        {
-            Fuel_Max = 40.0f;
-            Fuel = Fuel_Max;
-        }
-        else if (FuelLevel == 3)
-        {
-            Fuel_Max = 50.0f;
-            Fuel = Fuel_Max;
-        }
-        else if (FuelLevel == 4)
-        {
-            Fuel_Max = 60.0f;
-            Fuel = Fuel_Max;
-        }
-        else if (FuelLevel == 5)
-        {
-            Fuel_Max = 120.0f;
-            Fuel = Fuel_Max;
-        }
+        Fuel_Max = FuelRange * FuelRatio[FuelLevel - 1];
+        Fuel = Fuel_Max;
     }
 
 
@@ -47,21 +26,21 @@ public class FuelMeter : MonoBehaviour
     void Update()
     {
         float NeedleRotate;
-        float RotateRatio;
+        float RotateRate;
 
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButton(2))
         {
-            Debug.Log("ホイールクリックしたよ！");
             Fuel -= Time.deltaTime;
-            if (Fuel < 0)
+            if (Fuel < 0.0f)
             {
                 Fuel = 0.0f;
             }
         }
 
-        RotateRatio = 240.0f / Fuel_Max;
-        NeedleRotate = (RotateRatio * Fuel) - 120.0f;
+        RotateRate = 240.0f / Fuel_Max;
+        NeedleRotate = (RotateRate * Fuel) - 120.0f;
 
-        GetComponent<Needle>().RectTransform.Rotate = new Vector3(0, 0, NeedleRotate);
+        Debug.Log(NeedleRotate);
+        //GetComponent<Needle>().RectTransform.Rotate = new Vector3(0, 0, NeedleRotate);
     }
 }
