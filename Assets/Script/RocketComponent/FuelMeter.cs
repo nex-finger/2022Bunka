@@ -27,21 +27,32 @@ public class FuelMeter : MonoBehaviour
     {
         float NeedleRotate;
         float RotateRate;
+        float Fueltmp;
+
+        Fueltmp = Fuel;
 
         if (Input.GetMouseButton(2))
         {
             Debug.Log("Pushing");
-            Fuel -= Time.deltaTime;
+
+            Fueltmp -= Time.deltaTime;
             if (Fuel < 0.0f)
             {
                 Fuel = 0.0f;
+                Fueltmp = 0.0f;
             }
         }
 
         RotateRate = 240.0f / Fuel_Max;
-        NeedleRotate = (RotateRate * Fuel) - 120.0f;
+        NeedleRotate = (RotateRate * (Fuel - Fueltmp));
+
+        if (Fuel > 0.0f)
+        {
+            this.GetComponent<RectTransform>().Rotate(0.0f, 0.0f, NeedleRotate);
+        }
+
+        Fuel = Fueltmp;
 
         Debug.Log(Fuel);
-        //GetComponent<Needle>().RectTransform.Rotate = new Vector3(0, 0, NeedleRotate);
     }
 }

@@ -6,7 +6,8 @@ public class Zoom : MonoBehaviour
 {
     public float Ratio;
     private float Limit;
-    float MouseWheel;
+    private float MouseWheel;
+    private int AntennaLevel;
 
     Transform tf; //Main CameraのTransform
     Camera cam; //Main CameraのCamera
@@ -17,7 +18,10 @@ public class Zoom : MonoBehaviour
         tf = this.gameObject.GetComponent<Transform>(); //Main CameraのTransformを取得する。
         cam = this.gameObject.GetComponent<Camera>(); //Main CameraのCameraを取得する。
 
-        Limit = Input_Value.GetLimit();
+        float[] CameraLevel = new float[] { 2.0f, 3.0f, 3.0f, 4.0f, 4.0f };
+        AntennaLevel = LevelStorage.GetAntenna();
+
+        Limit = CameraLevel[AntennaLevel - 1];
     }
 
     // Update is called once per frame
@@ -40,5 +44,7 @@ public class Zoom : MonoBehaviour
                 cam.orthographicSize = 1.0f;
             }
         }
+
+        Debug.Log(cam.orthographicSize);
     }
 }
