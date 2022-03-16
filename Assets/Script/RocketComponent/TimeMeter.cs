@@ -6,11 +6,18 @@ using UnityEngine.SceneManagement;
 public class TimeMeter : MonoBehaviour
 {
     private float TimeLimit;
+    private bool Flag;
 
     // Start is called before the first frame update
     void Start()
     {
-        TimeLimit = 300.0f;
+        Flag = MeterFlag0.GetMeterFlag();
+
+        if (Flag == false)
+        {
+            MeterFlag0.TrueMeterFlag();
+            TimeLimit = 300.0f;
+        }
     }
 
     // Update is called once per frame

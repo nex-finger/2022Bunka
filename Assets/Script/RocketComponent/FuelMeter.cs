@@ -7,16 +7,22 @@ public class FuelMeter : MonoBehaviour
     private float Fuel_Max;
     public static float Fuel;
     public float FuelRange;
+    private bool Flag;
 
     // Start is called before the first frame update
     void Start()
     {
-        int FuelLevel = 1;
-        float[] FuelRatio = new float[] {75.0f, 100.0f, 150.0f, 300.0f, 1500.0f};
+        Flag = MeterFlag0.GetMeterFlag();
 
-        FuelLevel = LevelStorage.GetFuel();
-        Fuel_Max = FuelRange * FuelRatio[FuelLevel - 1];
-        Fuel = Fuel_Max;
+        if (Flag == false)
+        {
+            int FuelLevel = 1;
+            float[] FuelRatio = new float[] { 75.0f, 100.0f, 150.0f, 300.0f, 1500.0f };
+
+            FuelLevel = LevelStorage.GetFuel();
+            Fuel_Max = FuelRange * FuelRatio[FuelLevel - 1];
+            Fuel = Fuel_Max;
+        }
     }
 
 
@@ -47,6 +53,6 @@ public class FuelMeter : MonoBehaviour
 
         }
 
-        Debug.Log(Fuel);
+        //Debug.Log(Fuel);
     }
 }
