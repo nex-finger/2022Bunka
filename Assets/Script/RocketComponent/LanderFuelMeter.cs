@@ -3,35 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FuelMeter : MonoBehaviour
+public class LanderFuelMeter : MonoBehaviour
 {
-    public static float Fuel_Max;
-    public static float Fuel;
+    private float Fuel_Max;
+    private float Fuel;
+    private float TotalFuel;
     public float FuelRange;
     private bool Flag;
-
-    public static float GetFuel()
-    {
-        return Fuel;
-    }
-
-    public static float GetFuel_Max()
-    {
-        return Fuel_Max;
-    }
 
     // Start is called before the first frame update
     void Start()
     {
-        int FuelLevel = 1;
-        float[] FuelRatio = new float[] { 30.0f, 40.0f, 60.0f, 120.0f, 500.0f };
+        Fuel_Max = FuelMeter.GetFuel_Max();
+        Fuel = FuelMeter.GetFuel();
 
-        FuelLevel = LevelStorage.GetFuel();
-        Fuel_Max = FuelRange * FuelRatio[FuelLevel - 1];
-        Fuel = Fuel_Max;
+        TotalFuel = Fuel_Max - Fuel;
+        GameObject.Find("Needle_Fuel").GetComponent<RectTransform>().Rotate(0.0f, 0.0f, ((240.0f / Fuel_Max) * TotalFuel));
     }
-
-
 
     // Update is called once per frame
     void Update()

@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TimeMeter : MonoBehaviour
+public class LanderTimeMeter : MonoBehaviour
 {
-    public static float TimeLimit;
-    private bool Flag;
-
-    public static float GetTimeLimit()
-    {
-        return TimeLimit;
-    }
+    private float TimeLimit;
+    private float TotalTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        TimeLimit = 300.0f;
+        TimeLimit = TimeMeter.GetTimeLimit();
+        TotalTime = 300.0f - TimeLimit;
+
+        GameObject.Find("Needle_Time").GetComponent<RectTransform>().Rotate(0.0f, 0.0f, ((240.0f / TimeLimit) * TotalTime));
     }
 
     // Update is called once per frame

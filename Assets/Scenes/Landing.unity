@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 667709237}
   - component: {fileID: 667709236}
   - component: {fileID: 667709235}
+  - component: {fileID: 667709238}
   m_Layer: 5
   m_Name: Needle_Fuel
   m_TagString: Untagged
@@ -519,7 +520,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667709233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e6f6ffc5dd627741a7407dcd9ecc6f5, type: 3}
   m_Name: 
@@ -562,6 +563,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667709233}
   m_CullTransparentMesh: 0
+--- !u!114 &667709238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667709233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa8c4de9fb948a4e8ab1c6dcf7f6891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FuelRange: 0
 --- !u!1 &710843635
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +587,6 @@ GameObject:
   - component: {fileID: 710843636}
   - component: {fileID: 710843639}
   - component: {fileID: 710843638}
-  - component: {fileID: 710843637}
   m_Layer: 5
   m_Name: Center_Fuel
   m_TagString: Untagged
@@ -600,19 +613,6 @@ RectTransform:
   m_AnchoredPosition: {x: -400, y: -150}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &710843637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710843635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6f6ffc5dd627741a7407dcd9ecc6f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FuelRange: 1
 --- !u!114 &710843638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,6 +1733,7 @@ GameObject:
   - component: {fileID: 1712055632}
   - component: {fileID: 1712055631}
   - component: {fileID: 1712055630}
+  - component: {fileID: 1712055633}
   m_Layer: 5
   m_Name: Needle_Time
   m_TagString: Untagged
@@ -1766,7 +1767,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712055628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bc0f63bb4001154f91ef76535670ae5, type: 3}
   m_Name: 
@@ -1808,6 +1809,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712055628}
   m_CullTransparentMesh: 0
+--- !u!114 &1712055633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712055628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35045b83a6b164e4790fc08b9da524f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1823496437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,7 +2409,6 @@ GameObject:
   - component: {fileID: 1942513637}
   - component: {fileID: 1942513640}
   - component: {fileID: 1942513639}
-  - component: {fileID: 1942513638}
   m_Layer: 5
   m_Name: Center_Time
   m_TagString: Untagged
@@ -2423,19 +2435,6 @@ RectTransform:
   m_AnchoredPosition: {x: -400, y: -300}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1942513638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1942513636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6f6ffc5dd627741a7407dcd9ecc6f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FuelRange: 1
 --- !u!114 &1942513639
 MonoBehaviour:
   m_ObjectHideFlags: 0
