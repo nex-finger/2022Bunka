@@ -9,22 +9,27 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("HowtoPlay");
     }
+
     public void SCGallery()
     {
         SceneManager.LoadScene("Gallery");
     }
+
     public void SCGameTitle()
     {
         SceneManager.LoadScene("GameTitle");
     }
+
     public void SCArcadeStart()
     {
         SceneManager.LoadScene("ArcadeStart");
     }
+
     public void SCSetting()
     {
         SceneManager.LoadScene("Setting");
     }
+
     public void SCArcadeLanding()
     {
         SceneManager.LoadScene("ArcadeLanding");
