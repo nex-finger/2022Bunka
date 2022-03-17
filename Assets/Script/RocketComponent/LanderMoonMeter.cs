@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoonMeter : MonoBehaviour
+public class LanderMoonMeter : MonoBehaviour
 {
     private float LanderLevel;
-    private Vector2 RocketPlace, MoonPlace;
+    private float RocketPlace;
     private float Distance;
     private float Rotate1, Rotate2;
-    private float MeterMax = 25.0f;
+    private float MeterMax = 30.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +32,10 @@ public class MoonMeter : MonoBehaviour
 
         //this.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 
-        RocketPlace.x = GameObject.Find("Rocket").transform.position.x;
-        RocketPlace.y = GameObject.Find("Rocket").transform.position.y;
-        MoonPlace.x = GameObject.Find("Moon_tmp").transform.position.x;
-        MoonPlace.y = GameObject.Find("Moon_tmp").transform.position.y;
+        RocketPlace = GameObject.Find("Rocket").transform.position.y;
 
-        Distance = Mathf.Sqrt((RocketPlace.x - MoonPlace.x) * (RocketPlace.x - MoonPlace.x) + (RocketPlace.y - MoonPlace.y) * (RocketPlace.y - MoonPlace.y));
-        if(Distance > MeterMax)
+        Distance = RocketPlace + 14.0f;
+        if (Distance > MeterMax)
         {
             Distance = MeterMax;
         }
