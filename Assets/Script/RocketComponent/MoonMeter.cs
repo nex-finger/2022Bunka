@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class MoonMeter : MonoBehaviour
 {
+    public GameObject Item;
+
     private float LanderLevel;
     private Vector2 RocketPlace, MoonPlace;
+    private float red, green, blue, alfa;
 
     // Start is called before the first frame update
     void Start()
     {
         LanderLevel = LevelStorage.GetLander();
 
-        if(LanderLevel == 1)
+        if (LanderLevel == 1)
         {
-            this.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+            Item.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
         }
     }
 
