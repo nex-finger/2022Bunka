@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoonMeter : MonoBehaviour
 {
-    public GameObject Item;
-
     private float LanderLevel;
     private Vector2 RocketPlace, MoonPlace;
-    private float red, green, blue, alfa;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +15,7 @@ public class MoonMeter : MonoBehaviour
 
         if (LanderLevel == 1)
         {
-            Item.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+            GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
         }
     }
 
