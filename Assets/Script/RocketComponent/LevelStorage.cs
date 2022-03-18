@@ -45,6 +45,21 @@ public class LevelStorage : MonoBehaviour
         return TotalCash;
     }
 
+    public static float TotalTime;
+    public static float GetTotalTime(int a)
+    {
+        if(a == 0)
+        {
+            TotalTime += Time.deltaTime;
+        }
+        else
+        {
+            TotalTime = 0.0f;
+        }
+
+        return TotalTime;
+    }
+
     void Start()
     {
         BoostLevel = 1;
@@ -53,6 +68,7 @@ public class LevelStorage : MonoBehaviour
         LanderLevel = 1;
 
         TotalCash = 0;
+        TotalTime = 0.0f;
     }
 
     // 数値を増やすボタンのOn Click()に指定

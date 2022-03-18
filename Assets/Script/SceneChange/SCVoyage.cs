@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SCVoyage : MonoBehaviour
 {
+    private int Cash;
+
     public void OnClick()
     {
-        SceneManager.LoadScene("Voyage");
+        Cash = LevelStorage.GetCash();
+        if(Cash <= 3000)
+        {
+            SceneManager.LoadScene("Voyage");
+        }
     }
 }
