@@ -1738,7 +1738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d0fc6aff2ff3e43922c1a6d6841c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  E_ini_Speed: 0.3
+  E_ini_Speed: 0.5
   E_ini_Angle: 270
   Gravity: 0.001
   M_ini_Speed: 0
