@@ -21,7 +21,7 @@ public class SoundSlider : MonoBehaviour
     void Awake()
     {
         m_Slider = GetComponent<Slider>();
-        m_Slider.value = AudioListener.volume;
+        m_Slider.value = GetMasterVolume();
     }
 
     private void OnEnable()
