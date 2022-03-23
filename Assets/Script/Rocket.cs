@@ -323,8 +323,8 @@ public class Rocket : MonoBehaviour
     void Accel_cal()
     {
         // 考慮します＾＾
-        E_place_3_x = E_place_3_x_tmp + ((E_acc_x + M_acc_x + R_acc_x) * ((1.0f / Time.deltaTime) / 144.0f)) * Time.deltaTime;
-        E_place_3_y = E_place_3_y_tmp + ((E_acc_y + M_acc_y + R_acc_y) * ((1.0f / Time.deltaTime) / 144.0f)) * Time.deltaTime;
+        E_place_3_x = E_place_3_x_tmp + ((E_acc_x + M_acc_x + R_acc_x) * (Time.deltaTime * 144.0f)) * Time.deltaTime;
+        E_place_3_y = E_place_3_y_tmp + ((E_acc_y + M_acc_y + R_acc_y) * (Time.deltaTime * 144.0f)) * Time.deltaTime;
 
         // 反映させる
         transform.position = new Vector3(E_place_3_x, E_place_3_y, 0);
