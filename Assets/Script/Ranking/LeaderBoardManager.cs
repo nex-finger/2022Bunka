@@ -11,7 +11,7 @@ public class LeaderBoardManager : MonoBehaviour
 
         NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>("GameScore");
 
-         ///timeフィールドの降順でデータを取得
+         //timeフィールドの昇順でデータを取得
                     query.OrderByAscending ("time");
 
                     //検索件数を5件に設定
