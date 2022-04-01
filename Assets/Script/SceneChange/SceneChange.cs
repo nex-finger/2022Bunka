@@ -34,4 +34,9 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("ArcadeLanding");
     }
+
+    public void SCLeaderBoard()
+    {
+        SceneManager.LoadScene("LeaderBoard");
+    }
 }
