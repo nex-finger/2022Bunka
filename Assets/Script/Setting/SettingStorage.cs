@@ -56,7 +56,24 @@ public class SettingStorage : MonoBehaviour
                 Sensi_Rotate = 1.0f;
                 break;
             default:
+                break;
+        }
+    }
 
+    public static void InputSensi_Zoom(int num, float value)
+    {
+        switch (num)
+        {
+            case 0:
+                Sensi_Zoom = num;
+                break;
+            case 1:
+                Sensi_Zoom += num;
+                break;
+            case 2:
+                Sensi_Zoom = 1.0f;
+                break;
+            default:
                 break;
         }
     }

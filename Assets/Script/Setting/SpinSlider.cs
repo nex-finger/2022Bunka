@@ -5,7 +5,7 @@ using UnityEngine.UI;//Sliderを使用するために必要
 
 [RequireComponent(typeof(Slider))]
 
-public class SensiSlider : MonoBehaviour
+public class SpinSlider : MonoBehaviour
 {
 
     public static Slider m_Slider;//音量調整用スライダー
@@ -17,16 +17,16 @@ public class SensiSlider : MonoBehaviour
     void Awake()
     {
         m_Slider = GetComponent<Slider>();
-        m_Slider.value = 0.1f;
+        m_Slider.value = 0.5f;
     }
 
     private void OnEnable()
     {
-        
+        SettingStorage.InputSensi_Rotate(0, m_Slider.value);
     }
 
     private void OnDisable()
     {
-        
+
     }
 }
