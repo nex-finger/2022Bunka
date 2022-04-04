@@ -6,8 +6,10 @@ using UnityEngine;
 
 public class Lander : MonoBehaviour
 {
-    public float LandingPower;
+    private float LandingPower;
     public float RandomRange;
+    public float BoostRange;
+    private int BoostLevel;
     private Rigidbody2D _rigidbody2D;
     private Vector3 _reset;
     [SerializeField] private Vector3 _acceleration;
@@ -39,6 +41,17 @@ public class Lander : MonoBehaviour
     {
         Rocket_Angle = new Vector3(0, 0, 0);
         Rotate_acc = 0;
+    }
+
+    void RocketComponent()
+    {
+        int BoostLevel = 1;
+        float[] BoostRatio = new float[] { 1.05f, 1.20f, 1.50f, 2.00f, 5.00f };
+
+        BoostLevel = LevelStorage.GetBoost();
+        LandingPower = BoostRange * BoostRatio[BoostLevel - 1];
+
+        //Debug.Log(Boost_Power);
     }
 
     void Rocket_Boost()

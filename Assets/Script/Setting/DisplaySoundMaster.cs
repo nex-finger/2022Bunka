@@ -19,6 +19,6 @@ public class DisplaySoundMaster : MonoBehaviour
     {
         volume = SoundSlider.GetMasterVolume();
         //Debug.Log(volume);
-        TextVolume.text = string.Format("{0,4}", volume);
+        TextVolume.text = string.Format("{0:F2}", volume);
     }
 }

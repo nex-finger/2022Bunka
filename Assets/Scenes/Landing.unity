@@ -1276,8 +1276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2fa93eb028d3f54fb88937fbc94e4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LandingPower: 1
   RandomRange: 3
+  BoostRange: 0.5
   _acceleration: {x: 0, y: 0, z: 0}
 --- !u!60 &1157975298
 PolygonCollider2D:
