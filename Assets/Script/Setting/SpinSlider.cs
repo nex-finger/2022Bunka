@@ -20,13 +20,9 @@ public class SpinSlider : MonoBehaviour
         m_Slider.value = 0.5f;
     }
 
-    private void OnEnable()
+    void Update()
     {
         SettingStorage.InputSensi_Rotate(0, m_Slider.value);
-    }
-
-    private void OnDisable()
-    {
-
+        //Debug.Log(m_Slider.value);
     }
 }

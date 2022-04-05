@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Zoom : MonoBehaviour
 {
-    public float Ratio;
+    private float Ratio;
     private float Limit;
     private float MouseWheel;
     private int AntennaLevel;
@@ -17,6 +17,9 @@ public class Zoom : MonoBehaviour
     {
         tf = this.gameObject.GetComponent<Transform>(); //Main CameraのTransformを取得する。
         cam = this.gameObject.GetComponent<Camera>(); //Main CameraのCameraを取得する。
+
+        Ratio = SettingStorage.GetSensi_Zoom();
+        Ratio = 1.0f + (0.1f * Ratio);
 
         float[] CameraLevel = new float[] { 2.0f, 3.0f, 3.0f, 4.0f, 4.0f };
         AntennaLevel = LevelStorage.GetAntenna();
@@ -39,9 +42,9 @@ public class Zoom : MonoBehaviour
         else if (MouseWheel < 0)
         {
             cam.orthographicSize = cam.orthographicSize * (1 / Ratio); //ズームイン。
-            if (cam.orthographicSize < 1.0f)
+            if (cam.orthographicSize < 0.5f)
             {
-                cam.orthographicSize = 1.0f;
+                cam.orthographicSize = 0.5f;
             }
         }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SettingZoom : MonoBehaviour
 {
-    public float Ratio;
+    private float Ratio;
     private float Limit;
     private float MouseWheel;
     private int AntennaLevel;
@@ -25,6 +25,9 @@ public class SettingZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Ratio = SettingStorage.GetSensi_Zoom();
+        Ratio = 1.0f + (0.1f * Ratio);
+
         MouseWheel = Input.GetAxis("Mouse ScrollWheel"); //Iキーが押されていれば
         if (MouseWheel > 0)
         {
@@ -37,9 +40,9 @@ public class SettingZoom : MonoBehaviour
         else if (MouseWheel < 0)
         {
             cam.orthographicSize = cam.orthographicSize * (1 / Ratio); //ズームイン。
-            if (cam.orthographicSize < 1.0f)
+            if (cam.orthographicSize < 0.5f)
             {
-                cam.orthographicSize = 1.0f;
+                cam.orthographicSize = 0.5f;
             }
         }
 

@@ -8,18 +8,17 @@ public class MuteBotton : MonoBehaviour
 {
     //Toggle用のフィールド
     public Toggle toggle;
+    //[SerializeField] private MonoBehaviour _component;
 
     public void OnToggleChanged()
     {
         if(toggle.isOn == true)
         {
-            SettingStorage.InputVolume(0, 0.0f);
-            AudioListener.volume = 0.0f;
+            GetComponent<AudioListener>().enabled = false;
         }
         else
         {
-            SettingStorage.InputVolume(2, 0.0f);
-            AudioListener.volume = 0.5f;
+            GetComponent<AudioListener>().enabled = true;
         }
     }
 }

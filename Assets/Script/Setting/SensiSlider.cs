@@ -17,16 +17,12 @@ public class SensiSlider : MonoBehaviour
     void Awake()
     {
         m_Slider = GetComponent<Slider>();
-        m_Slider.value = 0.1f;
+        m_Slider.value = 0.5f;
     }
 
-    private void OnEnable()
+    void Update()
     {
-        
-    }
-
-    private void OnDisable()
-    {
-        
+        SettingStorage.InputSensi_Zoom(0, m_Slider.value);
+        //Debug.Log(m_Slider.value);
     }
 }

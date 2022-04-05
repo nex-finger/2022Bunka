@@ -28,10 +28,10 @@ public class SettingStorage : MonoBehaviour
         switch (num)
         {
             case 0:
-                Volume = num;
+                Volume = value;
                 break;
             case 1:
-                Volume += num;
+                Volume += value;
                 break;
             case 2:
                 Volume = 0.5f;
@@ -47,10 +47,10 @@ public class SettingStorage : MonoBehaviour
         switch (num)
         {
             case 0:
-                Sensi_Rotate = num;
+                Sensi_Rotate = value;
                 break;
             case 1:
-                Sensi_Rotate += num;
+                Sensi_Rotate += value;
                 break;
             case 2:
                 Sensi_Rotate = 1.0f;
@@ -65,10 +65,10 @@ public class SettingStorage : MonoBehaviour
         switch (num)
         {
             case 0:
-                Sensi_Zoom = num;
+                Sensi_Zoom = value;
                 break;
             case 1:
-                Sensi_Zoom += num;
+                Sensi_Zoom += value;
                 break;
             case 2:
                 Sensi_Zoom = 1.0f;
