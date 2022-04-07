@@ -43,7 +43,7 @@ public class LeaderBoardManager : MonoBehaviour
 
         NCMBQuery<NCMBObject> query2 = new NCMBQuery<NCMBObject>("GameScore");
 
-         //timeフィールドの昇順でデータを取得
+         //scoreフィールドの降順でデータを取得
                 query2.OrderByDescending ("score");
 
                 //検索件数を5件に設定
@@ -52,10 +52,10 @@ public class LeaderBoardManager : MonoBehaviour
 
         query2.FindAsync (async (List<NCMBObject> objList ,NCMBException e) => {
                 if (e != null) {
-                  UnityEngine.Debug.Log ("タイムランキング取得失敗");
+                  UnityEngine.Debug.Log ("スコアランキング取得失敗");
                 } else {
                     //検索成功時の処理
-                    UnityEngine.Debug.Log ("タイムランキング取得成功");
+                    UnityEngine.Debug.Log ("スコアランキング取得成功");
                         //ログに表示
                         foreach (NCMBObject obj in objList) {
                             int    s = System.Convert.ToInt32(obj["score"]);
