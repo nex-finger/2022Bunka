@@ -28,6 +28,4 @@ public class DataSetup : MonoBehaviour
         Debug.Log(BootTimes);
         PlayerPrefs.SetInt("BootTimes", BootTimes);
     }
-
-    
 }
