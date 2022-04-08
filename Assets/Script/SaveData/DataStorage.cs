@@ -531,9 +531,4 @@ public class DataStorage : MonoBehaviour
         InputClearAntenna(0, PlayerPrefs.GetInt("ClearAntenna"));
         InputClearLander(0, PlayerPrefs.GetInt("ClearLander"));
     }
-
-    public static void DeleteData()
-    {
-
-    }
 }
