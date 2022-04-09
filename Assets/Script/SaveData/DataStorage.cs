@@ -484,6 +484,30 @@ public class DataStorage : MonoBehaviour
         }
     }
 
+    //クレジットの調整
+    public static int Limit;
+    public static int GetLimit()
+    {
+        return Limit;
+    }
+
+    //0なら通常モード、1なら初心者モード
+    public static void InputLimit(int num)
+    {
+        switch (num)
+        {
+            case 0:
+                Limit = 3000;
+                break;
+            case 1:
+                Limit = 2000;
+                break;
+            default:
+
+                break;
+        }
+    }
+
     public static void FirstData()
     {
         PlayerPrefs.SetInt("BootTimes", 0);
@@ -508,6 +532,7 @@ public class DataStorage : MonoBehaviour
         PlayerPrefs.SetInt("ClearFuel", 0);
         PlayerPrefs.SetInt("ClearAntenna", 0);
         PlayerPrefs.SetInt("ClearLander", 0);
+        PlayerPrefs.SetInt("BeggnerMode", 0);
     }
 
     public static void InputData()
@@ -530,5 +555,30 @@ public class DataStorage : MonoBehaviour
         InputClearFuel(0, PlayerPrefs.GetInt("ClearFuel"));
         InputClearAntenna(0, PlayerPrefs.GetInt("ClearAntenna"));
         InputClearLander(0, PlayerPrefs.GetInt("ClearLander"));
+        InputLimit(PlayerPrefs.GetInt("BeggnerMode"));
+    }
+
+    public static void SaveData()
+    {
+        PlayerPrefs.SetInt("BootTimes", BootTimes);
+        PlayerPrefs.SetFloat("Volume", Volume);
+        PlayerPrefs.SetFloat("Spin", Spin);
+        PlayerPrefs.SetFloat("Zoom", Zoom);
+        PlayerPrefs.SetInt("ClearTimes", ClearTimes);
+        PlayerPrefs.SetInt("BestScore", BestScore);
+        PlayerPrefs.SetInt("BSBoost", BSBoost);
+        PlayerPrefs.SetInt("BSFuel", BSFuel);
+        PlayerPrefs.SetInt("BSAntenna", BSAntenna);
+        PlayerPrefs.SetInt("BSLander", BSLander);
+        PlayerPrefs.SetFloat("BestTime", BestTime);
+        PlayerPrefs.SetInt("BTBoost", BTBoost);
+        PlayerPrefs.SetInt("BTFuel", BTFuel);
+        PlayerPrefs.SetInt("BTAntenna", BTAntenna);
+        PlayerPrefs.SetInt("BTLander", BTLander);
+        PlayerPrefs.SetInt("ClearBoost", ClearBoost);
+        PlayerPrefs.SetInt("ClearFuel", ClearFuel);
+        PlayerPrefs.SetInt("ClearAntenna", ClearAntenna);
+        PlayerPrefs.SetInt("ClearLander", ClearLander);
+        PlayerPrefs.SetInt("BeggnerMode", Limit);
     }
 }

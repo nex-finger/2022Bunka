@@ -1833,6 +1833,7 @@ GameObject:
   - component: {fileID: 862396344}
   - component: {fileID: 862396343}
   - component: {fileID: 862396346}
+  - component: {fileID: 862396347}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1902,6 +1903,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 862396347}
+        m_MethodName: SaveData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 862396346}
         m_MethodName: SCGameTitle
         m_Mode: 1
@@ -1960,6 +1972,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebb2b406d90f4fe4ea85589b27213512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &862396347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862396341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee61fa52ae262d4db9f67bac7ae6b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &937806036
@@ -2197,6 +2221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1039055503}
   - component: {fileID: 1039055504}
+  - component: {fileID: 1039055505}
   m_Layer: 5
   m_Name: ToggleSavedata
   m_TagString: Untagged
@@ -2270,8 +2295,32 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1039055505}
+        m_MethodName: OnToggleChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &1039055505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039055502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4578df7199847f14b91a5db67095e256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 1039055504}
 --- !u!1 &1170340202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4334,6 +4383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2147073783}
   - component: {fileID: 2147073784}
+  - component: {fileID: 2147073785}
   m_Layer: 5
   m_Name: ToggleBeginner
   m_TagString: Untagged
@@ -4407,5 +4457,29 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2147073785}
+        m_MethodName: OnToggleChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &2147073785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147073782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c0bbb080131594a907326620822e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 2147073784}

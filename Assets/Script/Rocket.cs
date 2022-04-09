@@ -179,7 +179,7 @@ public class Rocket : MonoBehaviour
 
     void Rocket_Boost()
     {
-        if (Input.GetKey("space") || Input.GetMouseButton(2))
+        if (Input.GetMouseButton(2))
         {
             Rocket_Angle = GameObject.Find("Rocket").transform.localEulerAngles;
 
@@ -367,7 +367,7 @@ public class Rocket : MonoBehaviour
         R_acc_x = 0.0f;
         R_acc_y = 0.0f;
 
-        SensiSpin = 0.05f * SettingStorage.GetSensi_Rotate();
+        SensiSpin = 0.02f * PlayerPrefs.GetFloat("Spin");
         SensiSAS = 0.3f * SensiSpin;
     }
 

@@ -37,10 +37,15 @@ public class Lander : MonoBehaviour
     float Rotate_acc;
     float Rocket_x, Rocket_y;
 
+    float VecX, VecY;
+
     void Reset_Value_Rocket()
     {
         Rocket_Angle = new Vector3(0, 0, 0);
         Rotate_acc = 0;
+
+        SensiSpin = 0.02f * PlayerPrefs.GetFloat("Spin");
+        SensiSAS = 0.3f * SensiSpin;
     }
 
     void RocketComponent()
@@ -56,38 +61,44 @@ public class Lander : MonoBehaviour
 
     void Rocket_Boost()
     {
-        if (Input.GetKey("space") || Input.GetMouseButton(2))
+        if (Input.GetMouseButton(2))
         {
             Rocket_Angle = GameObject.Find("Rocket").transform.localEulerAngles;
 
             // 角度をラジアンに変換
             float Angle = Rocket_Angle.z * Mathf.Deg2Rad;
             // ラジアンから進行方向を設定
-            Vector3 Boost_acc = new Vector3(Mathf.Cos(Angle), Mathf.Sin(Angle), 0);
+            VecX = LandingPower * Mathf.Cos(Angle);
+            VecY = LandingPower * Mathf.Sin(Angle);
+
+            Vector3 Boost_acc = new Vector3(VecX, VecY, 0);
 
             _acceleration = new Vector3(Boost_acc.x, Boost_acc.y, 0);    // 力を設定
             _rigidbody2D.AddForce(_acceleration, ForceMode2D.Force);
         }
     }
 
+    private float SensiSpin;
+    private float SensiSAS;
+
     void Rocket_Rotate()
     {
         // スタビライズする
         if (Rotate_acc > 0)
         {
-            if (Rotate_acc < 0.01f)
+            if (Rotate_acc < SensiSAS)
             {
                 Rotate_acc = 0;
             }
-            Rotate_acc -= 0.01f;
+            Rotate_acc -= SensiSAS;
         }
         else if (Rotate_acc < 0)
         {
-            if (Rotate_acc > 0.01f)
+            if (Rotate_acc > SensiSAS)
             {
                 Rotate_acc = 0;
             }
-            Rotate_acc += 0.01f;
+            Rotate_acc += SensiSAS;
         }
 
         // z軸（２次元座標では回転軸はひとつしかないため）の回転の取得する
@@ -96,12 +107,12 @@ public class Lander : MonoBehaviour
         // クリックによる加速度の増減
         if (Input.GetMouseButton(0))
         {
-            Rotate_acc += 0.03f;
+            Rotate_acc += SensiSpin;
         }
 
         if (Input.GetMouseButton(1))
         {
-            Rotate_acc -= 0.03f;
+            Rotate_acc -= SensiSpin;
         }
 
         // 1フレームで回転する量を代入
