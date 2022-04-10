@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 456756299}
   - component: {fileID: 456756298}
   - component: {fileID: 456756297}
+  - component: {fileID: 456756301}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -225,6 +226,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &456756301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456756296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d5fb877c003f4ba79318643c6f7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Moveobj1: {fileID: 916474189}
+  Moveobj2: {fileID: 749760072}
+  Moveobj3: {fileID: 1526182633}
+  Moveobj4: {fileID: 768610528}
+  Canvas: {fileID: 1817499784}
 --- !u!1 &621366170
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 621366175}
+      - m_Target: {fileID: 456756301}
         m_MethodName: SCSetting
         m_Mode: 1
         m_Arguments:
@@ -759,8 +777,6 @@ GameObject:
   - component: {fileID: 952710642}
   - component: {fileID: 952710641}
   - component: {fileID: 952710640}
-  - component: {fileID: 952710643}
-  - component: {fileID: 952710644}
   m_Layer: 5
   m_Name: Arcade
   m_TagString: Untagged
@@ -831,8 +847,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 952710644}
-        m_MethodName: Anim1
+      - m_Target: {fileID: 456756301}
+        m_MethodName: SCArcadeLanding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -879,35 +895,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952710638}
   m_CullTransparentMesh: 0
---- !u!114 &952710643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952710638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb2b406d90f4fe4ea85589b27213512, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &952710644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952710638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 028d5fb877c003f4ba79318643c6f7c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Moveobj1: {fileID: 916474189}
-  Moveobj2: {fileID: 749760072}
-  Moveobj3: {fileID: 1526182633}
-  Moveobj4: {fileID: 768610528}
-  CanvasAnim: {fileID: 1817499784}
 --- !u!1 &1173837371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1289543151}
+      - m_Target: {fileID: 456756301}
         m_MethodName: SCLeaderBoard
         m_Mode: 1
         m_Arguments:
@@ -1277,7 +1264,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1389374186}
+      - m_Target: {fileID: 456756301}
         m_MethodName: SCGallery
         m_Mode: 1
         m_Arguments:
@@ -1632,7 +1619,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1817499788
 RectTransform:
