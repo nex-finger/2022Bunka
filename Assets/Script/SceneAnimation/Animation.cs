@@ -149,4 +149,27 @@ public class Animation : MonoBehaviour
         Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
                 .SetEase(Ease.InCubic);
     }
+
+    public void OnClickExitButton()
+    {
+        Moveobj1.transform.DOLocalMove(new Vector3(0, 288, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj2.transform.DOLocalMove(new Vector3(0, 96, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj3.transform.DOLocalMove(new Vector3(0, -96, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
+                .SetEase(Ease.InOutCubic)
+                .OnComplete(QuitApp);
+    }
+
+    private void QuitApp()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
 }
