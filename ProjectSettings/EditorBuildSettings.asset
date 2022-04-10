@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Gallery.unity
     guid: 5e6cc53df26529a45a0352d57c66d746
   - enabled: 1
+    path: Assets/Scenes/ArcadeLanding.unity
+    guid: 53162bdb6b69465448ad98c241e106cb
+  - enabled: 1
     path: Assets/Scenes/Result1.unity
     guid: a20277198351c664b92d6af03c0058ef
   - enabled: 1
