@@ -168,15 +168,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3a94d3ca8843142b38fed8542bbe72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Audio1: {fileID: 1769092458}
-  Audio2: {fileID: 2092447644}
-  Audio3: {fileID: 2036652638}
-  Audio4: {fileID: 446430430}
+  Music1: {fileID: 1769092458}
+  Music2: {fileID: 2092447644}
+  Music3: {fileID: 2036652638}
+  Music4: {fileID: 446430430}
+  Voice1: {fileID: 0}
+  Voice2: {fileID: 0}
+  Voice3: {fileID: 0}
   Script: {fileID: 360350250}
-  Object1: {fileID: 1769092456}
-  Object2: {fileID: 2092447643}
-  Object3: {fileID: 2036652637}
-  Object4: {fileID: 446430429}
 --- !u!1 &446430429
 GameObject:
   m_ObjectHideFlags: 0
