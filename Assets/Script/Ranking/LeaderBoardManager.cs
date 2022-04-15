@@ -18,7 +18,7 @@ public class LeaderBoardManager : MonoBehaviour
                     query.OrderByAscending ("time");
 
                     //検索件数を5件に設定
-                    query.Limit = 5;
+                    query.Limit = 10;
 
 
         query.FindAsync (async (List<NCMBObject> objList ,NCMBException e) => {
@@ -35,7 +35,7 @@ public class LeaderBoardManager : MonoBehaviour
                             this.Ntext = GameObject.Find("NCMBName1").GetComponent<Text>(); 
                             Ntext.text += n +"\n"+"\n";
                             this.NtextT = GameObject.Find("NCMBTime").GetComponent<Text>(); 
-                            NtextT.text += t + "\n"+"\n";
+                            NtextT.text += t.ToString("F2") + "\n"+"\n";
                     }
                 }
                                 
@@ -47,7 +47,7 @@ public class LeaderBoardManager : MonoBehaviour
                 query2.OrderByDescending ("score");
 
                 //検索件数を5件に設定
-                query2.Limit = 5;
+                query2.Limit = 10;
 
 
         query2.FindAsync (async (List<NCMBObject> objList ,NCMBException e) => {
