@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 using NCMB;
 
@@ -36,4 +36,4 @@ public class Logout : MonoBehaviour
 		});
 
 	}
-}
+}*/

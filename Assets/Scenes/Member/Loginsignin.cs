@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using NCMB;
@@ -77,4 +77,4 @@ public class Loginsignin : MonoBehaviour
 		});
 
 	}
-}
+}*/
