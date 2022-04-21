@@ -36,6 +36,7 @@ public class Lander : MonoBehaviour
     Vector3 Rocket_Angle;
     float Rotate_acc;
     float Rocket_x, Rocket_y;
+    Vector3 Boost_acc;
 
     float VecX, VecY;
 
@@ -55,8 +56,9 @@ public class Lander : MonoBehaviour
 
         BoostLevel = LevelStorage.GetBoost();
         LandingPower = BoostRange * BoostRatio[BoostLevel - 1];
+        //LandingPower = 5.0f;
 
-        //Debug.Log(Boost_Power);
+        //Debug.Log(LandingPower);
     }
 
     void Rocket_Boost()
@@ -68,13 +70,11 @@ public class Lander : MonoBehaviour
             // 角度をラジアンに変換
             float Angle = Rocket_Angle.z * Mathf.Deg2Rad;
             // ラジアンから進行方向を設定
-            VecX = LandingPower * Mathf.Cos(Angle);
-            VecY = LandingPower * Mathf.Sin(Angle);
+            Boost_acc = new Vector3(Mathf.Cos(Angle), Mathf.Sin(Angle), 0);
+            //Boost_acc.x = LandingPower * Boost_acc.x;
+            //Boost_acc.y = LandingPower * Boost_acc.y;
 
-            Vector3 Boost_acc = new Vector3(VecX, VecY, 0);
-
-            _acceleration = new Vector3(Boost_acc.x, Boost_acc.y, 0);    // 力を設定
-            _rigidbody2D.AddForce(_acceleration, ForceMode2D.Force);
+            _rigidbody2D.AddForce(Boost_acc, ForceMode2D.Force);
         }
     }
 
