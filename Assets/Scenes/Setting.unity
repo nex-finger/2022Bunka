@@ -1903,8 +1903,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 862396347}
-        m_MethodName: SaveData
+      - m_Target: {fileID: 862396346}
+        m_MethodName: SCGameTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1914,8 +1914,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 862396346}
-        m_MethodName: SCGameTitle
+      - m_Target: {fileID: 862396347}
+        m_MethodName: Saving
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 862396341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ee61fa52ae262d4db9f67bac7ae6b2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 02e9906c6ee60f943a0e8f03c1de2fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &937806036

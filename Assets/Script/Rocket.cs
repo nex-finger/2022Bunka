@@ -369,6 +369,8 @@ public class Rocket : MonoBehaviour
 
         SensiSpin = 0.02f * PlayerPrefs.GetFloat("Spin");
         SensiSAS = 0.3f * SensiSpin;
+
+        //Debug.Log(SensiSpin);
     }
 
     // Start is called before the first frame update

@@ -40,6 +40,7 @@ public class SettingStorage : MonoBehaviour
                 
                 break;
         }
+        DataStorage.InputVolume(0, Volume);
     }
 
     public static void InputSensi_Rotate(int num, float value)
@@ -56,8 +57,10 @@ public class SettingStorage : MonoBehaviour
                 Sensi_Rotate = 1.0f;
                 break;
             default:
+
                 break;
         }
+        DataStorage.InputSpin(0, Sensi_Rotate);
     }
 
     public static void InputSensi_Zoom(int num, float value)
@@ -74,8 +77,10 @@ public class SettingStorage : MonoBehaviour
                 Sensi_Zoom = 1.0f;
                 break;
             default:
+
                 break;
         }
+        DataStorage.InputZoom(0, Sensi_Zoom);
     }
 
     void Start()
