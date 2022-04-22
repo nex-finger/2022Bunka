@@ -1638,7 +1638,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30E0\u30FC\u30D3\u30FC\n\t\u3057\u3093\u3052\u3093\n\tmasuda\n\n\u30B9\u30C8\u30FC\u30EA\u30FC\n\tmasuda\n\n\u30B9\u30DA\u30B7\u30E3\u30EB\u30B5\u30F3\u30AF\u30B9\n\t\u7A7A\u60F3\u66F2\u7DDA\n\tDotween\n\t\n"
+  m_Text: "\u30E0\u30FC\u30D3\u30FC\n\t\u3057\u3093\u3052\u3093\n\tmasuda\n\n\u30B9\u30C8\u30FC\u30EA\u30FC\n\tmasuda\n\n\u30B9\u30DA\u30B7\u30E3\u30EB\u30B5\u30F3\u30AF\u30B9\n\t\u7A7A\u60F3\u66F2\u7DDA\n\tDotween\n\tNIFCLOUD\n"
 --- !u!222 &636961534
 CanvasRenderer:
   m_ObjectHideFlags: 0
