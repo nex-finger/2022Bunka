@@ -64,8 +64,7 @@ public class Animation : MonoBehaviour
         Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
-                .SetEase(Ease.InCubic)
-                .OnComplete(DestroyCanvas);
+                .SetEase(Ease.InCubic);
     }
 
     public void SCGallery()
@@ -91,8 +90,7 @@ public class Animation : MonoBehaviour
         Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
-                .SetEase(Ease.InCubic)
-                .OnComplete(DestroyCanvas);
+                .SetEase(Ease.InCubic);
     }
 
     public void SCSetting()
@@ -118,8 +116,7 @@ public class Animation : MonoBehaviour
         Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
-                .SetEase(Ease.InCubic)
-                .OnComplete(DestroyCanvas);
+                .SetEase(Ease.InCubic);
     }
 
     public void SCHowtoPlay()
@@ -184,7 +181,6 @@ public class Animation : MonoBehaviour
                 .SetEase(Ease.InCubic);
     }
 
-    //ボタンを押したときアニメーションする
     public void SCGameTitle()
     {
         Moveobj1 = GameObject.Find("expand01");
@@ -203,7 +199,7 @@ public class Animation : MonoBehaviour
                 .SetEase(Ease.InOutCubic)
                 .OnComplete(LoadGameTitle);
     }
-    //シーンを変更してその後にアニメ―ション
+
     private void LoadGameTitle()
     {
         SceneManager.LoadScene("GameTitle");
@@ -214,7 +210,8 @@ public class Animation : MonoBehaviour
         Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
-                .SetEase(Ease.InCubic);
+                .SetEase(Ease.InCubic)
+                .OnComplete(DestroyCanvas);
     }
 
 
@@ -244,5 +241,4 @@ public class Animation : MonoBehaviour
     {
         Destroy(Canvas);
     }
-
 }
