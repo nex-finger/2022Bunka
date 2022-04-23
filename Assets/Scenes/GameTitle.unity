@@ -978,7 +978,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1173837376}
+      - m_Target: {fileID: 456756301}
         m_MethodName: OnClickExitButton
         m_Mode: 1
         m_Arguments:

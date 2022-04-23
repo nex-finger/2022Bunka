@@ -32,7 +32,7 @@ public class Animation : MonoBehaviour
     {
         SceneManager.LoadScene("ArcadeLanding");
         Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
-            .SetEase(Ease.InCubic);
+                .SetEase(Ease.InCubic);
         Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
@@ -58,13 +58,14 @@ public class Animation : MonoBehaviour
     {
         SceneManager.LoadScene("LeaderBoard");
         Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
-            .SetEase(Ease.InCubic);
+                .SetEase(Ease.InCubic);
         Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
-                .SetEase(Ease.InCubic);
+                .SetEase(Ease.InCubic)
+                .OnComplete(DestroyCanvas);
     }
 
     public void SCGallery()
@@ -90,7 +91,8 @@ public class Animation : MonoBehaviour
         Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
-                .SetEase(Ease.InCubic);
+                .SetEase(Ease.InCubic)
+                .OnComplete(DestroyCanvas);
     }
 
     public void SCSetting()
@@ -110,13 +112,14 @@ public class Animation : MonoBehaviour
     {
         SceneManager.LoadScene("Setting");
         Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
-            .SetEase(Ease.InCubic);
+                .SetEase(Ease.InCubic);
         Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
                 .SetEase(Ease.InCubic);
         Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
-                .SetEase(Ease.InCubic);
+                .SetEase(Ease.InCubic)
+                .OnComplete(DestroyCanvas);
     }
 
     public void SCHowtoPlay()
@@ -170,6 +173,11 @@ public class Animation : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    private void DestroyCanvas()
+    {
+        Destroy(Canvas);
     }
 
 }
