@@ -348,16 +348,20 @@ public class Rocket : MonoBehaviour
         if(M_vec_RE < 0.5f)
         {
             SceneManager.LoadScene("Landing");
+            //ここのシーンチェンジのアニメーションは必要ありません
         }
 
         if(E_vec_RE > 50.0f)
         {
             SceneManager.LoadScene("GameOver1");
+            //ここにアニメーションをよろしくお願いします
+            //356行目の
         }
 
         if (E_vec_RE < 0.5f)
         {
             SceneManager.LoadScene("GameOver2");
+            //ここもアニメーション欲しいですm(__)m
         }
     }
 
