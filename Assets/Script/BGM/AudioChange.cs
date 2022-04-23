@@ -48,4 +48,25 @@ public class AudioChange : MonoBehaviour
         audios.Play();
     }
 
+    public void JibunClick()
+    {
+        //配列変数clipのインデックスが4のAudioのファイルを再生します。
+        audios.clip = clips[4];
+        audios.Play();
+    }
+
+    public void ChikyuClick()
+    {
+        //配列変数clipのインデックスが5のAudioのファイルを再生します。
+        audios.clip = clips[5];
+        audios.Play();
+    }
+
+    public void TukiClick()
+    {
+        //配列変数clipのインデックスが6のAudioのファイルを再生します。
+        audios.clip = clips[6];
+        audios.Play();
+    }
+
 }

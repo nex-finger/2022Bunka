@@ -864,7 +864,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 265431021}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1704286751}
+        m_MethodName: ChikyuClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &265431021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,7 +2175,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 908977837}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1704286751}
+        m_MethodName: JibunClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &908977837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2442,7 +2464,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1132913145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1704286751}
+        m_MethodName: TukiClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1132913145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3366,6 +3399,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 58012e274266f8549a2ce556a0f1436f, type: 3}
   - {fileID: 8300000, guid: 23b22bc276532d4439ecbd7acafd1d2a, type: 3}
   - {fileID: 8300000, guid: 55ae4f5945fc9d24c81e891cbbf02bf3, type: 3}
+  - {fileID: 8300000, guid: 4d852fe9743fd1e458926c112c611a07, type: 3}
+  - {fileID: 8300000, guid: 0d2c47dfb974c1a40be089ca6c7cdc6b, type: 3}
+  - {fileID: 8300000, guid: 9234ff8c7cd129a429bd2719e4bcd84a, type: 3}
 --- !u!82 &1704286752
 AudioSource:
   m_ObjectHideFlags: 0
