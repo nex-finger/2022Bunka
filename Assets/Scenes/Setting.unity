@@ -1834,6 +1834,7 @@ GameObject:
   - component: {fileID: 862396343}
   - component: {fileID: 862396346}
   - component: {fileID: 862396347}
+  - component: {fileID: 862396348}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1903,7 +1904,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 862396346}
+      - m_Target: {fileID: 862396348}
         m_MethodName: SCGameTitle
         m_Mode: 1
         m_Arguments:
@@ -1986,6 +1987,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e9906c6ee60f943a0e8f03c1de2fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &862396348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862396341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d5fb877c003f4ba79318643c6f7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Moveobj1: {fileID: 0}
+  Moveobj2: {fileID: 0}
+  Moveobj3: {fileID: 0}
+  Moveobj4: {fileID: 0}
+  Canvas: {fileID: 0}
 --- !u!1 &937806036
 GameObject:
   m_ObjectHideFlags: 0

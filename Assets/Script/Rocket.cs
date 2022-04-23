@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour
 {
@@ -65,6 +67,14 @@ public class Rocket : MonoBehaviour
 
     private float SensiSpin;
     private float SensiSAS;
+
+    //シーンチェンジのアニメーションに使うオブジェクト
+    private GameObject Moveobj1;
+    private GameObject Moveobj2;
+    private GameObject Moveobj3;
+    private GameObject Moveobj4;
+    private GameObject Canvas;
+    public bool Once = true;
 
     void Reset_Value_Rocket()
     {
@@ -345,7 +355,15 @@ public class Rocket : MonoBehaviour
 
     void SceneChange()
     {
-        if(M_vec_RE < 0.5f)
+        //シーンチェンジアニメーションに使うオブジェクト
+        Moveobj1 = GameObject.Find("expand01");
+        Moveobj2 = GameObject.Find("expand02");
+        Moveobj3 = GameObject.Find("expand03");
+        Moveobj4 = GameObject.Find("expand04");
+        Canvas = GameObject.Find("CanvasAnim");
+        DontDestroyOnLoad(Canvas);
+
+        if (M_vec_RE < 0.5f)
         {
             SceneManager.LoadScene("Landing");
             //ここのシーンチェンジのアニメーションは必要ありません
@@ -353,16 +371,63 @@ public class Rocket : MonoBehaviour
 
         if(E_vec_RE > 50.0f)
         {
-            SceneManager.LoadScene("GameOver1");
-            //ここにアニメーションをよろしくお願いします
-            //356行目の
+            if (Once == true)
+            {
+                Once = false;
+                Moveobj1.transform.DOLocalMove(new Vector3(0, 288, 0), 1)
+                        .SetEase(Ease.InOutCubic);
+                Moveobj2.transform.DOLocalMove(new Vector3(0, 96, 0), 1)
+                        .SetEase(Ease.InOutCubic);
+                Moveobj3.transform.DOLocalMove(new Vector3(0, -96, 0), 1)
+                        .SetEase(Ease.InOutCubic);
+                Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
+                        .SetEase(Ease.InOutCubic)
+                        .OnComplete(LoadGameOver1);
+            }
         }
 
         if (E_vec_RE < 0.5f)
         {
-            SceneManager.LoadScene("GameOver2");
-            //ここもアニメーション欲しいですm(__)m
+            if (Once == true)
+            {
+                Once = false;
+                Moveobj1.transform.DOLocalMove(new Vector3(0, 288, 0), 1)
+                        .SetEase(Ease.InOutCubic);
+                Moveobj2.transform.DOLocalMove(new Vector3(0, 96, 0), 1)
+                        .SetEase(Ease.InOutCubic);
+                Moveobj3.transform.DOLocalMove(new Vector3(0, -96, 0), 1)
+                        .SetEase(Ease.InOutCubic);
+                Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
+                        .SetEase(Ease.InOutCubic)
+                        .OnComplete(LoadGameOver2);
+            }
         }
+    }
+
+    private void LoadGameOver1()
+    {
+        SceneManager.LoadScene("GameOver1");
+        Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
+            .SetEase(Ease.InCubic);
+        Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
+                .SetEase(Ease.InCubic);
+    }
+
+    private void LoadGameOver2()
+    {
+        SceneManager.LoadScene("GameOver2");
+        Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
+            .SetEase(Ease.InCubic);
+        Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
+                .SetEase(Ease.InCubic);
     }
 
     void Reset()
@@ -392,6 +457,7 @@ public class Rocket : MonoBehaviour
         
         // 月
         Moon_setup();
+ 
     }
 
     // Update is called once per frame
