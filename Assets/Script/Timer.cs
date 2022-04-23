@@ -18,6 +18,6 @@ public class Timer : MonoBehaviour
     void Update()
     {
         TimeTimer = LevelStorage.GetTotalTime(0);
-        TextTimer.text = string.Format("{0}", TimeTimer);
+        //TextTimer.text = string.Format("{0}", TimeTimer);
     }
 }
