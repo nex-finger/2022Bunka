@@ -8,8 +8,6 @@ using DG.Tweening;
 public class FinishLanding : MonoBehaviour
 {
     public GameObject Rocket;
-    private float Angle;
-
     private int flag;
     private int count;
 
@@ -32,31 +30,12 @@ public class FinishLanding : MonoBehaviour
         if (velocity == new Vector2(0.0f, 0.0f))
         {
             flag = 1;
-
-            Angle = Rocket.transform.rotation.z;
-            if(Angle != 90.0)
-            {
-                flag = 2;
-            }
         }
     }
 
     private void LoadResult1()
     {
         SceneManager.LoadScene("Result1");
-        Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
-            .SetEase(Ease.InCubic);
-        Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
-                .SetEase(Ease.InCubic);
-        Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
-                .SetEase(Ease.InCubic);
-        Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
-                .SetEase(Ease.InCubic);
-    }
-
-    private void LoadResult2()
-    {
-        SceneManager.LoadScene("Result2");
         Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
             .SetEase(Ease.InCubic);
         Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
@@ -105,35 +84,6 @@ public class FinishLanding : MonoBehaviour
                 Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
                         .SetEase(Ease.InOutCubic)
                         .OnComplete(LoadResult1);
-            }
-        }
-
-        if (flag == 2)
-        {
-            //ここにシーンチェンジをよろしくお願いします
-            //変移先はResult1
-
-            //シーンチェンジアニメーションに使うオブジェクト
-            Moveobj1 = GameObject.Find("expand01");
-            Moveobj2 = GameObject.Find("expand02");
-            Moveobj3 = GameObject.Find("expand03");
-            Moveobj4 = GameObject.Find("expand04");
-            Canvas = GameObject.Find("CanvasAnim");
-            DontDestroyOnLoad(Canvas);
-
-            if (Once == true)
-            {
-                Once = false;
-                Moveobj1.transform.DOLocalMove(new Vector3(0, 288, 0), 1)
-                        .SetEase(Ease.InOutCubic);
-                Moveobj2.transform.DOLocalMove(new Vector3(0, 96, 0), 1)
-                        .SetEase(Ease.InOutCubic);
-                Moveobj3.transform.DOLocalMove(new Vector3(0, -96, 0), 1)
-                        .SetEase(Ease.InOutCubic);
-                Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
-                        .SetEase(Ease.InOutCubic)
-                        .OnComplete(LoadResult2);
-                SceneManager.LoadScene("Result2");
             }
         }
     }
