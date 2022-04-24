@@ -8,7 +8,7 @@ using DG.Tweening;
 public class FinishLanding : MonoBehaviour
 {
     public GameObject Rocket;
-    public float Angle;
+    private float Angle;
 
     private int flag;
     private int count;
@@ -34,7 +34,7 @@ public class FinishLanding : MonoBehaviour
             flag = 1;
 
             Angle = Rocket.transform.rotation.z;
-            if(Angle == 0.0)
+            if(Angle != 90.0)
             {
                 flag = 2;
             }
@@ -133,6 +133,7 @@ public class FinishLanding : MonoBehaviour
                 Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
                         .SetEase(Ease.InOutCubic)
                         .OnComplete(LoadResult2);
+                SceneManager.LoadScene("Result2");
             }
         }
     }

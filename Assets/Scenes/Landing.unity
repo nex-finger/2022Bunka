@@ -1339,7 +1339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rocket: {fileID: 1157975292}
-  Angle: 0
   Moveobj1: {fileID: 0}
   Moveobj2: {fileID: 0}
   Moveobj3: {fileID: 0}
