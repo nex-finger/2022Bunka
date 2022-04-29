@@ -400,7 +400,7 @@ public class Rocket : MonoBehaviour
                 Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
                         .SetEase(Ease.InOutCubic)
                         .OnComplete(LoadGameOver2);
-            }
+            }　
         }
     }
 

@@ -15,12 +15,12 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButtonDown(2))
         {
             this.GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 255);
         }
 
-        if (Input.GetKeyUp("space") || Input.GetMouseButtonUp(2))
+        if (Input.GetMouseButtonUp(2))
         {
             this.GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, -255);
         }

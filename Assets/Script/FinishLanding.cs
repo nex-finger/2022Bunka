@@ -8,6 +8,8 @@ using DG.Tweening;
 public class FinishLanding : MonoBehaviour
 {
     public GameObject Rocket;
+    private float Angle;
+
     private int flag;
     private int count;
 
@@ -25,11 +27,18 @@ public class FinishLanding : MonoBehaviour
         var rigidbody = Rocket.GetComponent<Rigidbody2D>();
         var velocity = rigidbody.velocity;
 
-        Debug.Log(velocity);
+        Angle = Rocket.transform.rotation.z;
+        Debug.Log(Angle);
 
         if (velocity == new Vector2(0.0f, 0.0f))
         {
-            flag = 1;
+            flag = 2;
+
+            Angle = Rocket.transform.rotation.z;
+            if(0.6f < Angle && Angle < 0.8f)
+            {
+                flag = 1;
+            }
         }
     }
 
@@ -85,6 +94,11 @@ public class FinishLanding : MonoBehaviour
                         .SetEase(Ease.InOutCubic)
                         .OnComplete(LoadResult1);
             }
+        }
+
+        if (flag == 2)
+        {
+            //シーン変移、Result2へ
         }
     }
 }
