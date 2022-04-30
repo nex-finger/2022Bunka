@@ -34,8 +34,8 @@ public class LevelStorage : MonoBehaviour
     public int AntennaLimit;
     public int LanderLimit;
 
-    private int[] CostBoost = new int[] {200, 300, 500, 500};
-    private int[] CostFuel = new int[] {100, 250, 400, 400};
+    private int[] CostBoost = new int[] {200, 300, 500, 700};
+    private int[] CostFuel = new int[] {100, 250, 400, 700};
     private int[] CostAntenna = new int[] {150, 400, 200, 400};
     private int[] CostLander = new int[] {250, 100, 100, 100};
 

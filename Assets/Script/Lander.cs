@@ -8,7 +8,7 @@ public class Lander : MonoBehaviour
 {
     private float LandingPower;
     public float RandomRange;
-    public float BoostRange;
+    private float BoostRange = 1.0f;
     private int BoostLevel;
     private Rigidbody2D _rigidbody2D;
     private Vector3 _reset;
@@ -54,7 +54,7 @@ public class Lander : MonoBehaviour
         int BoostLevel = 1;
         float[] BoostRatio = new float[] { 1.05f, 1.20f, 1.50f, 2.00f, 5.00f };
 
-        BoostLevel = LevelStorage.GetBoost();
+        BoostLevel = LevelStorage.GetLander();
         LandingPower = BoostRange * BoostRatio[BoostLevel - 1];
         //LandingPower = 5.0f;
 
@@ -71,8 +71,8 @@ public class Lander : MonoBehaviour
             float Angle = Rocket_Angle.z * Mathf.Deg2Rad;
             // ラジアンから進行方向を設定
             Boost_acc = new Vector3(Mathf.Cos(Angle), Mathf.Sin(Angle), 0);
-            //Boost_acc.x = LandingPower * Boost_acc.x;
-            //Boost_acc.y = LandingPower * Boost_acc.y;
+            Boost_acc.x = LandingPower * Boost_acc.x;
+            Boost_acc.y = LandingPower * Boost_acc.y;
 
             _rigidbody2D.AddForce(Boost_acc, ForceMode2D.Force);
         }
