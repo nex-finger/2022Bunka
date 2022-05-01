@@ -22,7 +22,7 @@ public class FinishLanding : MonoBehaviour
 
     void Judge()
     {
-        flag = 0;
+        //flag = 0;
 
         var rigidbody = Rocket.GetComponent<Rigidbody2D>();
         var velocity = rigidbody.velocity;
@@ -67,6 +67,7 @@ public class FinishLanding : MonoBehaviour
     {
         //宇宙船の速度が0ならflagを0に
         Judge();
+        Debug.Log(flag);
 
         if (flag == 1)
         {
@@ -96,7 +97,7 @@ public class FinishLanding : MonoBehaviour
             }
         }
 
-        if (flag == 2)
+        else if (flag == 2)
         {
             //シーン変移、Result2へ
             SceneManager.LoadScene("Result2");
