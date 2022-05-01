@@ -10,6 +10,6 @@ public class OpeningSetup : MonoBehaviour
         AudioListener.volume = 0.1f;
         SettingStorage.InputSensi_Rotate(0, 1.0f);
         SettingStorage.InputSensi_Zoom(0, 1.0f);
-        DataStorage.InputLimit(0);
+        DataStorage.InputLimit(1);
     }
 }

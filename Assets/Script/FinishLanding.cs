@@ -99,6 +99,7 @@ public class FinishLanding : MonoBehaviour
         if (flag == 2)
         {
             //シーン変移、Result2へ
+            SceneManager.LoadScene("Result2");
         }
     }
 }
