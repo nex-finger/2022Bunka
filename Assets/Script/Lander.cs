@@ -8,7 +8,7 @@ public class Lander : MonoBehaviour
 {
     private float LandingPower;
     public float RandomRange;
-    private float BoostRange = 1.0f;
+    private float BoostRange = 0.5f;
     private int BoostLevel;
     private Rigidbody2D _rigidbody2D;
     private Vector3 _reset;
@@ -52,13 +52,15 @@ public class Lander : MonoBehaviour
     void RocketComponent()
     {
         int BoostLevel = 1;
-        float[] BoostRatio = new float[] { 1.05f, 1.20f, 1.50f, 2.00f, 5.00f };
+        float[] BoostRatio = new float[] { 1.05f, 1.20f, 1.50f, 2.00f, 3.00f };
 
         BoostLevel = LevelStorage.GetLander();
         LandingPower = (float)(BoostRange * BoostRatio[BoostLevel - 1]);
         //LandingPower = 5.0f;
 
-        //Debug.Log(LandingPower);
+        Debug.Log(BoostRange);
+        Debug.Log(BoostRatio[BoostLevel - 1]);
+        Debug.Log(LandingPower);
     }
 
     void Rocket_Boost()
@@ -135,6 +137,7 @@ public class Lander : MonoBehaviour
     {
         // 変数のリセット
         Reset_Value_Rocket();
+        RocketComponent();
 
         //Boost_Power = Input_Value.Boost_Power;
         //RCS_Power = Input_Value.RCS_Power;

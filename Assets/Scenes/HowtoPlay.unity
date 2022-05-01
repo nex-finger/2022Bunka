@@ -2214,7 +2214,7 @@ MonoBehaviour:
   label: {fileID: 0}
   BoostLimit: 4
   FuelLimit: 4
-  AntennaLimit: 4
+  AntennaLimit: 3
   LanderLimit: 4
 --- !u!1 &1602958616
 GameObject:

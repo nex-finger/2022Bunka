@@ -8,7 +8,8 @@ public class OpeningSetup : MonoBehaviour
     void Start()
     {
         AudioListener.volume = 0.1f;
-        SettingStorage.InputSensi_Rotate(0, 0.5f);
-        SettingStorage.InputSensi_Zoom(0, 0.5f);
+        SettingStorage.InputSensi_Rotate(0, 1.0f);
+        SettingStorage.InputSensi_Zoom(0, 1.0f);
+        DataStorage.InputLimit(0);
     }
 }

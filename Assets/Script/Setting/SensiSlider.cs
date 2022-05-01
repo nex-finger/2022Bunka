@@ -17,7 +17,7 @@ public class SensiSlider : MonoBehaviour
     void Awake()
     {
         m_Slider = GetComponent<Slider>();
-        m_Slider.value = DataStorage.GetZoom();
+        m_Slider.value = SettingStorage.GetSensi_Zoom();
     }
 
     void Update()

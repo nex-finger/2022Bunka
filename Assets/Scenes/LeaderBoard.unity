@@ -1490,8 +1490,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922026451}
-        m_MethodName: SCGameTitle
+      - m_Target: {fileID: 1922026447}
+        m_MethodName: SCTipsAfter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

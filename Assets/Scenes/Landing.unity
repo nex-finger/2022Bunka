@@ -1396,7 +1396,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b3b05201e5d24148a55f75cf0aebf82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c0bdfb740a486f4088a70aeaeb14ea2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1466,7 +1466,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7, y: 5}
+    oldSize: {x: 10.24, y: 7.68}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3594,7 +3594,7 @@ GameObject:
   - component: {fileID: 1983322168}
   - component: {fileID: 1983322169}
   m_Layer: 0
-  m_Name: Rocket2
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -39,4 +39,19 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("LeaderBoard");
     }
+
+    public void SCTipsBefore()
+    {
+        SceneManager.LoadScene("TipsBefore");
+    }
+
+    public void SCTipsAfter()
+    {
+        SceneManager.LoadScene("TipsAfter");
+    }
+
+    public void SCDescript()
+    {
+        SceneManager.LoadScene("Descript");
+    }
 }

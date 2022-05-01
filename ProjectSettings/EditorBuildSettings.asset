@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 4cf40cbf8f28b67409da0fa4b26ac242
   - enabled: 1
+    path: Assets/Scenes/TipsBefore.unity
+    guid: 24872589cd8279d4b8dbb27211787634
+  - enabled: 1
+    path: Assets/Scenes/Descript.unity
+    guid: 2b80f23d19adc8a429258ec4b86080ed
+  - enabled: 1
     path: Assets/Scenes/HowtoPlay.unity
     guid: f26487d1108aead4eabb3955cf69fa11
   - enabled: 1
@@ -50,4 +56,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LeaderBoard.unity
     guid: 428da0a548a8ed3409837187923ef147
+  - enabled: 1
+    path: Assets/Scenes/TipsAfter.unity
+    guid: 9d2dd990f86458246a08828740f815e7
   m_configObjects: {}
