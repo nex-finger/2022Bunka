@@ -17,7 +17,7 @@ public class Return : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // タイトルシーンに戻る
-            SceneManager.LoadScene("Title");
+            SceneManager.LoadScene("GameTitle");
         }
     }
 }
