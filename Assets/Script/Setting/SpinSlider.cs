@@ -17,7 +17,7 @@ public class SpinSlider : MonoBehaviour
     void Awake()
     {
         m_Slider = GetComponent<Slider>();
-        m_Slider.value = 0.5f;
+        m_Slider.value = DataStorage.GetSpin();
     }
 
     void Update()

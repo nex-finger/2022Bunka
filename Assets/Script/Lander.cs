@@ -55,7 +55,7 @@ public class Lander : MonoBehaviour
         float[] BoostRatio = new float[] { 1.05f, 1.20f, 1.50f, 2.00f, 5.00f };
 
         BoostLevel = LevelStorage.GetLander();
-        LandingPower = BoostRange * BoostRatio[BoostLevel - 1];
+        LandingPower = (float)(BoostRange * BoostRatio[BoostLevel - 1]);
         //LandingPower = 5.0f;
 
         //Debug.Log(LandingPower);
@@ -73,6 +73,8 @@ public class Lander : MonoBehaviour
             Boost_acc = new Vector3(Mathf.Cos(Angle), Mathf.Sin(Angle), 0);
             Boost_acc.x = LandingPower * Boost_acc.x;
             Boost_acc.y = LandingPower * Boost_acc.y;
+            //Boost_acc.x = 2.0f * Boost_acc.x;
+            //Boost_acc.y = 2.0f * Boost_acc.y;
 
             _rigidbody2D.AddForce(Boost_acc, ForceMode2D.Force);
         }
