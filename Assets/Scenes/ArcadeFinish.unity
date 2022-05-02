@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 633655764}
   - component: {fileID: 633655763}
   - component: {fileID: 633655762}
+  - component: {fileID: 633655766}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -282,8 +283,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 633655762}
-        m_MethodName: SCTipsBefore
+      - m_Target: {fileID: 633655766}
+        m_MethodName: SCTipsAfter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -330,6 +331,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633655760}
   m_CullTransparentMesh: 0
+--- !u!114 &633655766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633655760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d5fb877c003f4ba79318643c6f7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Moveobj1: {fileID: 0}
+  Moveobj2: {fileID: 0}
+  Moveobj3: {fileID: 0}
+  Moveobj4: {fileID: 0}
+  Canvas: {fileID: 0}
 --- !u!1 &928998321
 GameObject:
   m_ObjectHideFlags: 0

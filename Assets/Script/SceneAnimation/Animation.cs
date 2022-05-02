@@ -150,6 +150,99 @@ public class Animation : MonoBehaviour
                 .SetEase(Ease.InCubic);
     }
 
+    public void SCTipsBefore()
+    {
+        Moveobj1 = GameObject.Find("expand01");
+        Moveobj2 = GameObject.Find("expand02");
+        Moveobj3 = GameObject.Find("expand03");
+        Moveobj4 = GameObject.Find("expand04");
+        Canvas = GameObject.Find("CanvasAnim");
+        DontDestroyOnLoad(Canvas);
+        Moveobj1.transform.DOLocalMove(new Vector3(0, 288, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj2.transform.DOLocalMove(new Vector3(0, 96, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj3.transform.DOLocalMove(new Vector3(0, -96, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
+                .SetEase(Ease.InOutCubic)
+                .OnComplete(LoadTipsBefore);
+    }
+    private void LoadTipsBefore()
+    {
+        SceneManager.LoadScene("TipsBefore");
+        Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
+            .SetEase(Ease.InCubic);
+        Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
+                .SetEase(Ease.InCubic);
+    }
+
+    public void SCDescript()
+    {
+        Moveobj1 = GameObject.Find("expand01");
+        Moveobj2 = GameObject.Find("expand02");
+        Moveobj3 = GameObject.Find("expand03");
+        Moveobj4 = GameObject.Find("expand04");
+        Canvas = GameObject.Find("CanvasAnim");
+        DontDestroyOnLoad(Canvas);
+        Moveobj1.transform.DOLocalMove(new Vector3(0, 288, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj2.transform.DOLocalMove(new Vector3(0, 96, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj3.transform.DOLocalMove(new Vector3(0, -96, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
+                .SetEase(Ease.InOutCubic)
+                .OnComplete(LoadDescript);
+    }
+    private void LoadDescript()
+    {
+        SceneManager.LoadScene("Descript");
+        Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
+            .SetEase(Ease.InCubic);
+        Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
+                .SetEase(Ease.InCubic);
+    }
+
+    public void SCTipsAfter()
+    {
+        Moveobj1 = GameObject.Find("expand01");
+        Moveobj2 = GameObject.Find("expand02");
+        Moveobj3 = GameObject.Find("expand03");
+        Moveobj4 = GameObject.Find("expand04");
+        Canvas = GameObject.Find("CanvasAnim");
+        DontDestroyOnLoad(Canvas);
+        Moveobj1.transform.DOLocalMove(new Vector3(0, 288, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj2.transform.DOLocalMove(new Vector3(0, 96, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj3.transform.DOLocalMove(new Vector3(0, -96, 0), 1)
+                .SetEase(Ease.InOutCubic);
+        Moveobj4.transform.DOLocalMove(new Vector3(0, -288, 0), 1)
+                .SetEase(Ease.InOutCubic)
+                .OnComplete(LoadTipsAfter);
+    }
+    private void LoadTipsAfter()
+    {
+        SceneManager.LoadScene("TipsAfter");
+        Moveobj1.transform.DOLocalMove(new Vector3(-1024, 288, 0), 1)
+            .SetEase(Ease.InCubic);
+        Moveobj2.transform.DOLocalMove(new Vector3(1024, 96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj3.transform.DOLocalMove(new Vector3(-1024, -96, 0), 1)
+                .SetEase(Ease.InCubic);
+        Moveobj4.transform.DOLocalMove(new Vector3(1024, -288, 0), 1)
+                .SetEase(Ease.InCubic);
+    }
+
     public void SCVoyage()
     {
         Moveobj1 = GameObject.Find("expand01");
