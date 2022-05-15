@@ -273,9 +273,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d546075d89514a342bf0eca26c3eef28, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: ec816ceb8d221e644977e27c7e3dff9d, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -519,7 +519,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 478413065}
-        m_MethodName: SCGameTitle
+        m_MethodName: SCTipsAfter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
